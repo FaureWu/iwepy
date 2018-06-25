@@ -21,11 +21,13 @@ import userModel from '@/models/user'
 
 const app = zoro({
   onError(e) {
-    wepy.showToast({
-      icon: 'none',
-      title: e.message,
-      duration: 2000,
-    })
+    if (e.message) {
+      wepy.showToast({
+        icon: 'none',
+        title: e.message,
+        duration: 2000,
+      })
+    }
   },
 })
 app.model([demoModel, userModel])
