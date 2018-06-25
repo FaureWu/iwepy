@@ -1,0 +1,5 @@
+dist/*
+server/*
+node_modules/*
+*.log
+*.lock

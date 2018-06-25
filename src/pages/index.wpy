@@ -1,0 +1,110 @@
+<style lang="scss">
+.index-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.index-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 500rpx;
+  background: #fafafa;
+}
+
+.index-content {
+  width: 100%;
+}
+
+.index-panel {
+  margin: 10rpx;
+}
+
+.index-avatar-url {
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 50%;
+}
+</style>
+
+<template>
+  <view class="index-container">
+    <view class="index-header">
+      <image class="index-avatar-url" src="{{user.avatarUrl}}" />
+      <view class="index-nick-name">{{user.nickName}}</view>
+    </view>
+    <view class="index-content">
+      <i-panel i-class="index-panel" title="演示异步加载">
+        <i-alert wx:if="{{demoData.name}}" show-icon desc>
+          {{demoData.name}}
+          <view slot="desc">{{demoData.description}}</view>
+        </i-alert>
+        <i-button @click="handleQueryData" type="primary">点击获取异步数据</i-button>
+        <i-spin fix wx:if="{{ loading.queryData }}" />
+      </i-panel>
+      <i-panel i-class="index-panel" title="演示全局HTTP错误捕获">
+        <i-button @click="handleQueryHttpError" type="primary">点击演示http错误</i-button>
+        <i-spin fix wx:if="{{ loading.queryHttpError }}" />
+      </i-panel>
+      <i-panel i-class="index-panel" title="演示全局接口错误捕获">
+        <i-button @click="handleQueryError" type="primary">点击演示业务接口错误</i-button>
+        <i-spin fix wx:if="{{ loading.queryError }}" />
+      </i-panel>
+    </view>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+import { connect } from 'wepy-redux'
+import { actions } from 'roronoa-zoro'
+import { namespace as user } from '@/models/user'
+import { namespace as demo } from '@/models/demo'
+
+const demoActions = actions(demo)
+@connect(
+  {
+    user(state) {
+      return state[user]
+    },
+    demoData(state) {
+      return state[demo]
+    },
+    loading(state) {
+      const { effect } = state['@loading']
+      return {
+        queryHttpError: effect[`${demo}/queryHttpError`],
+        queryError: effect[`${demo}/queryError`],
+        queryData: effect[`${demo}/queryData`],
+      }
+    },
+  },
+  {
+    handleQueryHttpError: demoActions.queryHttpError,
+    handleQueryError: demoActions.queryError,
+    handleQueryData: demoActions.queryData,
+  },
+)
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: 'wepy小程序演示',
+    usingComponents: {
+      'i-panel': '../iview/panel/index',
+      'i-button': '../iview/button/index',
+      'i-spin': '../iview/spin/index',
+      'i-alert': '../iview/alert/index',
+    },
+  }
+  components = {}
+
+  computed = {}
+
+  methods = {}
+
+  onLoad() {}
+}
+</script>

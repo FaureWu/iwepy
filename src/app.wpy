@@ -1,0 +1,58 @@
+<style lang="less">
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+</style>
+
+<script>
+import wepy from 'wepy'
+import 'wepy-async-function'
+import zoro from 'roronoa-zoro'
+import { loading } from 'roronoa-zoro/plugin'
+import { setStore } from 'wepy-redux'
+import intercept from '@/utils/intercept'
+import demoModel from '@/models/demo'
+import userModel from '@/models/user'
+
+const app = zoro({
+  onError(e) {
+    wepy.showToast({
+      icon: 'none',
+      title: e.message,
+      duration: 2000,
+    })
+  },
+})
+app.model([demoModel, userModel])
+app.use(loading)
+
+export default class extends wepy.app {
+  config = {
+    pages: ['pages/index'],
+    window: {
+      backgroundTextStyle: 'light',
+      navigationBarBackgroundColor: '#fafafa',
+      navigationBarTitleText: 'WeChat',
+      navigationBarTextStyle: 'black',
+      backgroundColor: '#fafafa',
+    },
+  }
+
+  constructor() {
+    super()
+    this.use('requestfix')
+    this.use('promisify')
+    intercept(this, wepy)
+  }
+
+  onLaunch() {
+    const store = app.start()
+    setStore(store)
+  }
+}
+</script>
