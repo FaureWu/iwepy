@@ -744,8 +744,8 @@ camelcase@^3.0.0:
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-3.0.0.tgz#32fc4b9fcdaf845fcdf7e73bb97cac2261f0ab0a"
 
 caniuse-lite@^1.0.30000844:
-  version "1.0.30000858"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000858.tgz#f6f203a9128bac507136de1cf6cfd966d2df027c"
+  version "1.0.30000859"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000859.tgz#da974adc5348fffe94724877a7ef8cb5d6d3d777"
 
 cardinal@^1.0.0:
   version "1.0.0"
@@ -1644,8 +1644,8 @@ home-or-tmp@^2.0.0:
     os-tmpdir "^1.0.1"
 
 hosted-git-info@^2.1.4:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.6.0.tgz#23235b29ab230c576aab0d4f13fc046b0b038222"
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.6.1.tgz#6e4cee78b01bb849dcf93527708c69fdbee410df"
 
 htmlparser2@3.8.x:
   version "3.8.3"
@@ -2473,8 +2473,8 @@ prelude-ls@~1.1.2:
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"
 
 prettier@^1.13.5:
-  version "1.13.5"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.13.5.tgz#7ae2076998c8edce79d63834e9b7b09fead6bfd0"
+  version "1.13.6"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.13.6.tgz#00ae0b777ad92f81a9e7a1df2f0470b6dab0cb44"
 
 private@^0.1.6, private@^0.1.8:
   version "0.1.8"
@@ -2753,9 +2753,9 @@ rimraf@2, rimraf@^2.2.8:
   dependencies:
     glob "^7.0.5"
 
-roronoa-zoro@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/roronoa-zoro/-/roronoa-zoro-1.1.0.tgz#b9f77949c0159f309ea10df37132d02064c40b29"
+roronoa-zoro@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/roronoa-zoro/-/roronoa-zoro-1.1.2.tgz#cd0f0b4d663105d0418fafea99ca8bf984311f13"
   dependencies:
     redux "^4.0.0"
     regenerator-runtime "^0.11.1"
@@ -3158,8 +3158,8 @@ utils-merge@1.0.1:
   resolved "https://registry.yarnpkg.com/utils-merge/-/utils-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
 
 uuid@^3.0.0:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.2.1.tgz#12c528bb9d58d0b9265d9a2f6f0fe8be17ff1f14"
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.3.0.tgz#b237147804881d7b86f40a7ff8f590f15c37de32"
 
 validate-npm-package-license@^3.0.1:
   version "3.0.3"

@@ -5,7 +5,7 @@
 import wepy from 'wepy'
 import 'wepy-async-function'
 import zoro from 'roronoa-zoro'
-import { loading } from 'roronoa-zoro/plugin'
+import { createLoading } from 'roronoa-zoro/plugin'
 import { setStore } from 'wepy-redux'
 import intercept from '@/utils/intercept'
 import demoModel from '@/models/demo'
@@ -23,7 +23,7 @@ const app = zoro({
   },
 })
 app.model([demoModel, userModel])
-app.use(loading)
+app.use(createLoading())
 
 export default class extends wepy.app {
   config = {

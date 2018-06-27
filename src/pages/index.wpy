@@ -75,7 +75,7 @@ const demoActions = actions(demo)
       return state[demo]
     },
     loading(state) {
-      const { effect } = state['@loading']
+      const { effect } = state.loading
       return {
         queryHttpError: effect[`${demo}/queryHttpError`],
         queryError: effect[`${demo}/queryError`],
