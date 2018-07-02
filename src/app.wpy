@@ -24,6 +24,9 @@ const app = zoro({
 })
 app.model([demoModel, userModel])
 app.use(createLoading())
+const store = app.start(false)
+
+setStore(store)
 
 export default class extends wepy.app {
   config = {
@@ -45,8 +48,7 @@ export default class extends wepy.app {
   }
 
   onLaunch() {
-    const store = app.start()
-    setStore(store)
+    app.setup()
   }
 }
 </script>
