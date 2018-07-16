@@ -61,34 +61,27 @@
 <script>
 import wepy from 'wepy'
 import { connect } from 'wepy-redux'
-import { actions } from 'roronoa-zoro'
+import { createDispatcher } from 'roronoa-zoro'
 import { namespace as user } from '@/models/user'
 import { namespace as demo } from '@/models/demo'
 
-const demoActions = actions(demo)
-@connect(
-  {
-    user(state) {
-      return state[user]
-    },
-    demoData(state) {
-      return state[demo]
-    },
-    loading(state) {
-      const { effect } = state.loading
-      return {
-        queryHttpError: effect[`${demo}/queryHttpError`],
-        queryError: effect[`${demo}/queryError`],
-        queryData: effect[`${demo}/queryData`],
-      }
-    },
+const demoDispatcher = createDispatcher(demo)
+@connect({
+  user(state) {
+    return state[user]
   },
-  {
-    handleQueryHttpError: demoActions.queryHttpError,
-    handleQueryError: demoActions.queryError,
-    handleQueryData: demoActions.queryData,
+  demoData(state) {
+    return state[demo]
   },
-)
+  loading(state) {
+    const { effect } = state.loading
+    return {
+      queryHttpError: effect[`${demo}/queryHttpError`],
+      queryError: effect[`${demo}/queryError`],
+      queryData: effect[`${demo}/queryData`],
+    }
+  },
+})
 export default class Index extends wepy.page {
   config = {
     navigationBarTitleText: 'wepy小程序演示',
@@ -103,7 +96,17 @@ export default class Index extends wepy.page {
 
   computed = {}
 
-  methods = {}
+  methods = {
+    handleQueryData() {
+      demoDispatcher.queryData()
+    },
+    handleQueryHttpError() {
+      demoDispatcher.queryHttpError()
+    },
+    handleQueryError() {
+      demoDispatcher.queryError()
+    },
+  }
 
   onLoad() {}
 }
