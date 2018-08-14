@@ -4,11 +4,11 @@ var prod = process.env.NODE_ENV === 'production'
 const enableMock = process.env.MOCK === 'enable'
 
 const SERVER = {
-  development: '',
-  production: '',
+  dev: '',
+  prod: '',
 }
 
-let server = SERVER[process.env.NODE_ENV]
+let server = SERVER[process.env.APP_ENV || 'prod']
 if (enableMock) {
   server = 'http://localhost:3000/api'
 }

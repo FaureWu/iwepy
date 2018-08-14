@@ -4,10 +4,10 @@
   "description": "wepy combine iview",
   "main": "dist/app.js",
   "scripts": {
-    "start": "wepy build --watch",
-    "serve": "concurrently \"yarn server\" \"cross-env MOCK=enable wepy build --watch\" ",
+    "dev": "cross-env APP_ENV=dev wepy build --watch",
+    "mock": "concurrently \"yarn server\" \"cross-env APP_ENV=dev MOCK=enable wepy build --watch\" ",
     "server": "node-dev ./server/bin/www",
-    "build": "cross-env NODE_ENV=production wepy build --no-cache",
+    "build": "cross-env NODE_ENV=production APP_ENV=prod wepy build --no-cache",
     "dev:web": "wepy build --output web",
     "clean": "find ./dist -maxdepth 1 -not -name 'project.config.json' -not -name 'dist' | xargs rm -rf",
     "lint": "eslint ./src",
