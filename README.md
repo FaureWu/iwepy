@@ -9,19 +9,19 @@
 yarn
 ```
 
-### 启动dev环境
+### 启动dev环境
 ```bash
 yarn dev
 ```
 
 > 你可以通过APP_ENV来配置开发环境链接不同的server服务器
 
-### 启动mock环境
+### 启动mock环境
 ```bash
 yarn mock
 ```
 
-> mock环境下server会链接本地启动的mock服务器，也就是APP_ENV将会无效
+> mock环境下server会链接本地启动的mock服务器，也就是APP_ENV将会无效
 
 环境启动后，只需在微信开发者工具中，打开dist目录即可进行实时开发
 
@@ -35,7 +35,7 @@ dist目录为最终发布目录
 
 ## 如何配置不同环境下的server地址
 
-根目录下wepy.config.js文件中
+根目录下wepy.config.js文件中
 ```js
 const SERVER = {
   dev: '',
@@ -49,11 +49,11 @@ const SERVER = {
 
 ## 如何编写model
 
-请查看src/models/下的使用演示，更多信息查看[zoro文档](https://github.com/FaureWu/zoro/blob/master/doc/API.md)
+请查看src/models/下的使用演示，更多信息查看[zoro文档](https://github.com/FaureWu/zoro/blob/master/doc/API.md)
 
 ## 如何发起请求
 
-iwepy因为对wepy框架的request进行了一次封装，放于src/utils/request.js中，需要请求时请引入此工具代替
+iwepy因为对wepy框架的request进行了一次封装，放于src/utils/request.js中，需要请求时请引入此工具代替
 
 提供了的api有:
 * request() 参数同wepy.request
