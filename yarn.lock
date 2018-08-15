@@ -1331,8 +1331,8 @@ dateformat@~1.0.4-1.2.3:
     meow "^3.3.0"
 
 debounce@^1.0.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/debounce/-/debounce-1.1.0.tgz#6a1a4ee2a9dc4b7c24bb012558dbcdb05b37f408"
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/debounce/-/debounce-1.2.0.tgz#44a540abc0ea9943018dc0eaa95cce87f65cd131"
 
 debug@2.6.9, debug@^2.1.1, debug@^2.1.2, debug@^2.6.8, debug@^2.6.9:
   version "2.6.9"
@@ -4207,9 +4207,9 @@ rimraf@2, rimraf@^2.2.8, rimraf@^2.6.1:
   dependencies:
     glob "^7.0.5"
 
-roronoa-zoro@^1.1.11:
-  version "1.1.11"
-  resolved "https://registry.yarnpkg.com/roronoa-zoro/-/roronoa-zoro-1.1.11.tgz#52c9a26f5b4c990cea9b511ad4868a6c94613867"
+roronoa-zoro@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/roronoa-zoro/-/roronoa-zoro-1.2.0.tgz#dfa10462f4940e5d3b15fc59bc5eb84cdf60d649"
   dependencies:
     redux "^4.0.0"
     regenerator-runtime "^0.12.1"
