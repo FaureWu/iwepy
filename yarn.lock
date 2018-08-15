@@ -2,12 +2,6 @@
 # yarn lockfile v1
 
 
-"@babel/runtime@^7.0.0-beta.55", "@babel/runtime@^7.0.0-rc.1":
-  version "7.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.0.0-rc.1.tgz#42f36fc5817911c89ea75da2b874054922967616"
-  dependencies:
-    regenerator-runtime "^0.12.0"
-
 abbrev@1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
@@ -4011,7 +4005,7 @@ redeyed@~1.0.0:
   dependencies:
     esprima "~3.0.0"
 
-"redux@^2.0.0 || ^3.0.0", redux@^3.7.2:
+"redux@^2.0.0 || ^3.0.0":
   version "3.7.2"
   resolved "https://registry.yarnpkg.com/redux/-/redux-3.7.2.tgz#06b73123215901d25d065be342eb026bc1c8537b"
   dependencies:
@@ -4039,7 +4033,7 @@ regenerator-runtime@^0.11.0:
   version "0.11.1"
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.11.1.tgz#be05ad7f9bf7d22e056f9726cee5017fbf19e2e9"
 
-regenerator-runtime@^0.12.0:
+regenerator-runtime@^0.12.1:
   version "0.12.1"
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.12.1.tgz#fa1a71544764c036f8c49b13a08b2594c9f8a0de"
 
@@ -4213,12 +4207,12 @@ rimraf@2, rimraf@^2.2.8, rimraf@^2.6.1:
   dependencies:
     glob "^7.0.5"
 
-roronoa-zoro@^1.1.9:
-  version "1.1.9"
-  resolved "https://registry.yarnpkg.com/roronoa-zoro/-/roronoa-zoro-1.1.9.tgz#b80b622f84f8f7daf071a8621ab664f71abfc180"
+roronoa-zoro@^1.1.11:
+  version "1.1.11"
+  resolved "https://registry.yarnpkg.com/roronoa-zoro/-/roronoa-zoro-1.1.11.tgz#52c9a26f5b4c990cea9b511ad4868a6c94613867"
   dependencies:
-    "@babel/runtime" "^7.0.0-beta.55"
     redux "^4.0.0"
+    regenerator-runtime "^0.12.1"
 
 run-async@^0.1.0:
   version "0.1.0"

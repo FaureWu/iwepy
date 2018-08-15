@@ -16,9 +16,7 @@
   "author": "FaureWu <502556093@qq.com>",
   "license": "MIT",
   "dependencies": {
-    "@babel/runtime": "^7.0.0-rc.1",
-    "redux": "^3.7.2",
-    "roronoa-zoro": "^1.1.9",
+    "roronoa-zoro": "^1.1.11",
     "wepy": "^1.6.0",
     "wepy-async-function": "^1.4.4",
     "wepy-redux": "^1.5.3"
