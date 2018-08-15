@@ -5,11 +5,11 @@
 import wepy from 'wepy'
 import 'wepy-async-function'
 import zoro from 'roronoa-zoro'
-import { createLoading } from 'roronoa-zoro/plugin'
+import { createLoading, extendModel } from 'roronoa-zoro/plugin'
 import { setStore } from 'wepy-redux'
 import intercept from '@/utils/intercept'
-import demoModel from '@/models/demo'
-import userModel from '@/models/user'
+import commonModel from '@/models/common'
+import models from '@/models'
 
 const app = zoro({
   onError(e) {
@@ -22,8 +22,8 @@ const app = zoro({
     }
   },
 })
-app.model([demoModel, userModel])
-app.use(createLoading())
+app.use([createLoading(), extendModel(commonModel)])
+app.model(models)
 const store = app.start(false)
 
 setStore(store)

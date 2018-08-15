@@ -1,4 +1,6 @@
 import wepy from 'wepy'
+import { checkAuthSetting } from '@/utils/util'
+
 export const namespace = 'user'
 
 export default {
@@ -8,20 +10,25 @@ export default {
     put({ type: 'getUserInfo' })
   },
 
-  state: {},
+  state: {
+    userInfo: {},
+    authorize: false,
+  },
 
   effects: {
     async getUserInfo(action, { put }) {
-      const { userInfo } = await wepy.getUserInfo({
-        lang: 'zh_CN',
-      })
-      put({ type: 'save', payload: userInfo })
-    },
-  },
-
-  reducers: {
-    save({ payload }) {
-      return payload
+      const canGetUserInfo = await checkAuthSetting('userInfo')
+      if (canGetUserInfo) {
+        const { userInfo } = await wepy.getUserInfo({
+          lang: 'zh_CN',
+        })
+        put({
+          type: 'update',
+          payload: { userInfo: userInfo, authorize: canGetUserInfo },
+        })
+      } else {
+        put({ type: 'update', payload: { authorize: canGetUserInfo } })
+      }
     },
   },
 }

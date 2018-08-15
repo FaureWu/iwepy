@@ -33,10 +33,11 @@
 
 <template>
   <view class="index-container">
-    <view class="index-header">
+    <view wx:if="{{canGetUserInfo}}" class="index-header">
       <image class="index-avatar-url" src="{{user.avatarUrl}}" />
       <view class="index-nick-name">{{user.nickName}}</view>
     </view>
+    <button wx:else open-type="getUserInfo" @getuserinfo="handleUpdateUserInfo">登录</button>
     <view class="index-content">
       <i-panel i-class="index-panel" title="演示异步加载">
         <i-alert wx:if="{{demoData.name}}" show-icon desc>
@@ -65,22 +66,18 @@ import { createDispatcher } from 'roronoa-zoro'
 import { namespace as user } from '@/models/user'
 import { namespace as demo } from '@/models/demo'
 
+const userDispatcher = createDispatcher(user)
 const demoDispatcher = createDispatcher(demo)
+
 @connect({
-  user(state) {
-    return state[user]
-  },
-  demoData(state) {
-    return state[demo]
-  },
-  loading(state) {
-    const { effect } = state.loading
-    return {
-      queryHttpError: effect[`${demo}/queryHttpError`],
-      queryError: effect[`${demo}/queryError`],
-      queryData: effect[`${demo}/queryData`],
-    }
-  },
+  user: state => state[user].userInfo,
+  canGetUserInfo: state => state[user].authorize,
+  demoData: state => state[demo],
+  loading: ({ loading: { effect } }) => ({
+    queryHttpError: effect[`${demo}/queryHttpError`],
+    queryError: effect[`${demo}/queryError`],
+    queryData: effect[`${demo}/queryData`],
+  }),
 })
 export default class Index extends wepy.page {
   config = {
@@ -92,9 +89,8 @@ export default class Index extends wepy.page {
       'i-alert': '../iview/alert/index',
     },
   }
-  components = {}
 
-  computed = {}
+  components = {}
 
   methods = {
     handleQueryData() {
@@ -105,6 +101,9 @@ export default class Index extends wepy.page {
     },
     handleQueryError() {
       demoDispatcher.queryError()
+    },
+    handleUpdateUserInfo({ detail: { userInfo } }) {
+      userDispatcher.update({ userInfo })
     },
   }
 
