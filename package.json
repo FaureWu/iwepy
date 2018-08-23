@@ -16,7 +16,7 @@
   "author": "FaureWu <502556093@qq.com>",
   "license": "MIT",
   "dependencies": {
-    "roronoa-zoro": "^1.2.0",
+    "roronoa-zoro": "^1.2.4",
     "wepy": "^1.6.0",
     "wepy-async-function": "^1.4.4",
     "wepy-redux": "^1.5.3"
