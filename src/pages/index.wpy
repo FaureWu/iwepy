@@ -62,12 +62,9 @@
 <script>
 import wepy from 'wepy'
 import { connect } from 'wepy-redux'
-import { createDispatcher } from 'roronoa-zoro'
+import { dispatcher } from '@opcjs/zoro'
 import { namespace as user } from '@/models/user'
 import { namespace as demo } from '@/models/demo'
-
-const userDispatcher = createDispatcher(user)
-const demoDispatcher = createDispatcher(demo)
 
 @connect({
   user: state => state[user].userInfo,
@@ -94,16 +91,16 @@ export default class Index extends wepy.page {
 
   methods = {
     handleQueryData() {
-      demoDispatcher.queryData()
+      dispatcher.demo.queryData()
     },
     handleQueryHttpError() {
-      demoDispatcher.queryHttpError()
+      dispatcher.demo.queryHttpError()
     },
     handleQueryError() {
-      demoDispatcher.queryError()
+      dispatcher.demo.queryError()
     },
     handleUpdateUserInfo({ detail: { userInfo } }) {
-      userDispatcher.update({ userInfo })
+      dispatcher.user.update({ userInfo })
     },
   }
 

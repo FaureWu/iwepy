@@ -4,8 +4,8 @@
 <script>
 import wepy from 'wepy'
 import 'wepy-async-function'
-import zoro from 'roronoa-zoro'
-import { createLoading, extendModel } from 'roronoa-zoro/plugin'
+import zoro from '@opcjs/zoro'
+import { createLoading, createExtendModel } from '@opcjs/zoro-plugin'
 import { setStore } from 'wepy-redux'
 import intercept from '@/utils/intercept'
 import commonModel from '@/models/common'
@@ -22,7 +22,7 @@ const app = zoro({
     }
   },
 })
-app.use([createLoading(), extendModel(commonModel)])
+app.use([createLoading(), createExtendModel(commonModel)])
 app.model(models)
 const store = app.start(false)
 
