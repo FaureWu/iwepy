@@ -6,9 +6,9 @@
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/@opcjs/zoro-plugin/-/zoro-plugin-2.0.2.tgz#8dee9c93ec2004e573e98a841941f27a6e01e5d9"
 
-"@opcjs/zoro@^2.0.3":
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/@opcjs/zoro/-/zoro-2.0.3.tgz#e02793965cf5cc9b85791542807de49cd75a86cb"
+"@opcjs/zoro@^2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@opcjs/zoro/-/zoro-2.2.0.tgz#4913415ef742f00ea0ae5ca890a6c6f07b48ab71"
   dependencies:
     redux "^4.0.0"
     regenerator-runtime "^0.12.1"
