@@ -16,7 +16,7 @@
   "author": "FaureWu <502556093@qq.com>",
   "license": "MIT",
   "dependencies": {
-    "@opcjs/zoro": "^2.2.0",
+    "@opcjs/zoro": "^2.2.1",
     "@opcjs/zoro-plugin": "^2.0.2",
     "wepy": "^1.6.0",
     "wepy-async-function": "^1.4.4",
